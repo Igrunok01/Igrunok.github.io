@@ -1,0 +1,244 @@
+@font-face {
+  font-family: "TT Lakes";
+  src: url("fonts/TTLakes/TTLakes-Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: url("fonts/TTLakes/TTLakes-Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: url("fonts/TTLakes/TTLakes-Medium.woff") format("woff");
+  font-weight: 500;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.body {
+  font-family: "TT Lakes", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.menu {
+  position: relative;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw;
+}
+
+.menu::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.3vw;
+  background: #d9fff5;
+}
+
+.menu__left,
+.menu__right {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+
+.menu__divider {
+  width: 2px;
+  background: #eaeaea;
+  /* height: 32px; */
+  /* border-radius: 1px; */
+  /* margin-right: 16px;  */
+}
+
+.menu__icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+}
+
+.menu .button {
+  width: clamp(32px, 5vw, 128px);
+  height: clamp(32px, 5vw, 128px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.button__icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.menu__logo-img {
+  width: clamp(100px, 15vw, 400px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.section-title {
+  display: block;
+  position: relative;
+  font-weight: 700;
+  /* height: 12.5vw; */
+  /* line-height: 12.5vw; */
+  padding-left: 3.2vw;
+  font-size: clamp(1.25rem, 3vw, 6rem);
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  width: clamp(0.45vw, 0.6vw, 0.8vw);
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 0 15px 15px 0;
+  background: #41f6d7;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 0 3.2vw;
+}
+
+.read-more__link {
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(1rem, 2vw, 4.5rem);
+  font-weight: 500;
+  text-decoration: none;
+  color: #1b1c21;
+  margin-bottom: 16px;
+}
+
+.read-more__link .img {
+  width: clamp(24px, 5vw, 96px);
+  height: clamp(24px, 5vw, 96pxpx);
+}
+
+.description {
+  font-size: clamp(0.875rem, 2vw, 4rem);
+  line-height: 1.6;
+  text-align: left;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.picture {
+  width: 100%;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 2vw;
+  padding: 2vw;
+  white-space: nowrap;
+  scrollbar-width: none;
+  margin-bottom: 1vw;
+}
+
+.scroll-container__button {
+  flex: 0 0 auto;
+  padding: 1vw 2vw;
+  font-size: clamp(1rem, 2vw, 4.5rem);
+  border: 0.4vw solid transparent;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.scroll-container__button:hover {
+  border-color: #b8ffec;
+  border-radius: 6px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    flex-direction: row;
+  }
+
+  .section__wrapper,
+  .picture {
+    flex: 1;
+    max-width: 50%;
+  }
+}
+
+.menu__left .menu__divider {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .menu .menu__call,
+  .menu .menu__chat,
+  .menu .menu__profile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1365px) {
+  .menu__call,
+  .menu__chat,
+  .menu__profile,
+  .menu__left .menu__divider {
+    display: flex;
+  }
+}
+
+.menu .section-title {
+  display: none;
+}
+
+.menu__icon-label {
+  display: none;
+  font-weight: 500;
+  font-size: clamp(1rem, 2vw, 4.5rem);
+}
+
+@media (min-width: 1366px) {
+  .menu .menu__call,
+  .menu .menu__chat,
+  .menu .menu__profile,
+  .menu__left--hidden,
+  .main .section-title {
+    display: none;
+  }
+
+  .menu .section-title,
+  .menu .menu__icon-label {
+    display: flex;
+  }
+
+  .menu {
+    padding-left: 0;
+  }
+
+  .scroll-container--wrap {
+    flex-wrap: wrap;
+  }
+}
